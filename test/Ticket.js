@@ -31,7 +31,7 @@ describe ("Ticket", () => {
         it("Should allow owner to mint tickets", async () => {
             const eventId = 1;
             const quantity = 5;
-            const price = ethers.utils.parseEther("0.1");
+            const price = ethers.parseEther("0.1");
 
             await ticket.createTickets(eventId, quantity, price);
             expect(await ticket.getTicketSupply(eventId)).to.equal(quantity);
@@ -40,7 +40,7 @@ describe ("Ticket", () => {
         it("Should not allow non-owners to mint tickets", async () => {
             const eventId = 1;
             const quantity = 100;
-            const price = ethers.utils.parseEther("0.1");
+            const price = ethers.parseEther("0.1");
 
             await expect(ticket.connect(addr1).createTickets(eventId, quantity, price)).to.be.revertedWith("Ownable: caller is not the owner");
         });
@@ -49,7 +49,7 @@ describe ("Ticket", () => {
     describe("Purchasing or Buying", () => {
         const eventId = 1;
         const quantity = 100;
-        const price = ethers.utils.parseEther("0.1");
+        const price = ethers.parseEther("0.1");
 
         beforeEach(async () => {
             await ticket.createTickets(eventId, quantity, price);
@@ -96,7 +96,7 @@ describe ("Ticket", () => {
         it("Should allow ticket transfer between addresses", async () => {
             const eventId = 1;
             const quantity = 1;
-            const price = ethers.utils.parseEther("0.1");
+            const price = ethers.parseEther("0.1");
 
             await ticket.createTickets(eventId, quantity, price);
             await ticket.connect(addr1).purchaseTicket(eventId, 1, {
