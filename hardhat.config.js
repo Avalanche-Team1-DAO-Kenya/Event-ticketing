@@ -9,7 +9,15 @@ module.exports = {
         enabled: true,
         runs: 200
       },
-      
     }
+  },
+  networks: {
+    fuji: {
+      url: "https://api.avax-test.network/ext/bc/C/rpc",
+      chainId: 43113,
+    }
+  },
+  mocha: {
+    timeout: 20000,
   },
 };

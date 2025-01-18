@@ -2,6 +2,7 @@
   "$schema": "https://json.schemastore.org/package",
   "dependencies": {
     "@openzeppelin/contracts": "^5.2.0",
+    "avalanche": "^3.16.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "ethers": "^6.13.5",
