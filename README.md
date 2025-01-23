@@ -26,15 +26,15 @@ Access to the Google Sheet containing the form responses
 Set Up the Virtual Environment
 
 Create and activate a virtual environment:
+`python -m venv venv`
 
-python -m venv venv
 source venv/bin/activate 
 
 ### Install Dependencies
 
 Install the required Python packages:
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
  Configure the Database
 
@@ -42,9 +42,9 @@ Update the DATABASES setting in your settings.py file to connect to your Postgre
 
 ### Run the migrations:
 
-python manage.py makemigrations
+`python manage.py makemigrations`
 
-python manage.py migrate
+`python manage.py migrate`
 
 ### Set Up Google Sheets API
 
